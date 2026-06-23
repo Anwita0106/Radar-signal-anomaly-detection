@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+
+# Large, regenerable training/testing datasets -- run generate_training_data.py
+# and generate_test_data.py to recreate them. Not checked in because they're
+# multi-megabyte derived artifacts, not source.
+data/training_features.csv
+data/test_features.csv
+data/live_log.csv
+data/prediction_results.csv
+
+# The shipped models/isolation_forest.pkl + models/feature_baseline.json and
+# data/test_tracks.csv ARE intentionally kept (not ignored) so the dashboard
+# and predict.py work immediately after cloning, without requiring a full
+# retrain first.
