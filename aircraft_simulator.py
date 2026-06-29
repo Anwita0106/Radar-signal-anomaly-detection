@@ -1,25 +1,3 @@
-"""
-aircraft_simulator.py
-======================
-The kinematics engine. `Aircraft` owns position/heading/speed/altitude and
-knows how to integrate them forward one tick at a time. It does NOT decide
-*what* the aircraft should be doing -- that decision belongs entirely to
-`behaviors.py`. This split is the key architectural fix over V1, where a
-single `Aircraft.update()` method's `if/elif` chain mixed "how to move"
-and "which pattern is normal vs anomalous" into one unreadable block.
-
-Inputs
-------
-- A `behavior_name` (a key into `behaviors.NORMAL_BEHAVIORS` or
-  `behaviors.ANOMALOUS_BEHAVIORS`), set via `Aircraft.set_behavior()`.
-
-Outputs
--------
-- `Aircraft.state` (an `AircraftState`): x, y, z, heading, speed, vspeed --
-  read by `radar_simulator.py` every tick to produce a measurement, and by
-  `dashboard.py` to draw the aircraft on screen.
-"""
-
 import math
 
 import numpy as np

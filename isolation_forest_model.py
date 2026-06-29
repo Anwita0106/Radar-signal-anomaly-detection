@@ -1,12 +1,4 @@
 """
-isolation_forest_model.py
-============================
-Thin wrapper around `sklearn.ensemble.IsolationForest` so that every other
-file (train_model.py, evaluate_model.py, predict.py, dashboard.py) talks
-to the model through one consistent, three-method interface instead of
-calling `joblib.load` / `model.predict` / `model.decision_function`
-directly in five different places.
-
 Inputs
 ------
 - `train()`: a pandas DataFrame of feature vectors (columns =

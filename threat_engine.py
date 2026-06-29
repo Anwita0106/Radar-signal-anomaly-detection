@@ -16,15 +16,6 @@ human-readable `contributing_factors` -- e.g. "frequency_max_jump is
 4.1 sigma from baseline" -- so the dashboard (and a presenter) can always
 explain *why* a given score was assigned, not just what the number is.
 
-Why this file exists
----------------------
-V1 had no threat-scoring logic at all beyond "if label == Anomaly,
-threat_level = HIGH, score = abs(decision_function)*100" -- a single
-binary signal with no nuance and no explanation. The one piece of
-explanation logic that did exist (`predict.py`'s `explain_window`) was a
-disconnected heuristic only used offline, never wired into the live
-dashboard. V2 builds explanation directly into the one scoring path that
-both the dashboard and `predict.py` share.
 
 Inputs
 ------

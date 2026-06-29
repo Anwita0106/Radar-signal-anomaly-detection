@@ -1,18 +1,8 @@
 """
-config.py
-=========
+
 Single source of truth for every constant used across the V2 system.
 
-Why this file exists
----------------------
-In V1, the same numbers (radar coverage rectangle, window size, noise
-levels) were hardcoded independently in `dashboard.py` and `radar_logger.py`,
-and were expected to "match by convention." If one was edited and the other
-wasn't, the two would silently drift apart.
 
-In V2, every other module imports its constants from here. There is exactly
-one coverage rectangle, one window size, one set of noise parameters, one
-set of threat thresholds. Change a number once, and it's correct everywhere.
 """
 
 from pathlib import Path

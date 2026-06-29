@@ -1,22 +1,10 @@
 """
-data_logger.py
-================
+
 A small, generic utility that sits between the radar simulator and the
 feature extractor: it buffers raw measurement rows into a rolling window
 and (optionally) appends them to a CSV file. It does NOT compute features
 itself -- that is `feature_extraction.py`'s job, and only its job.
 
-Why this file exists
----------------------
-V1's `radar_logger.py` mixed THREE responsibilities into one class:
-generating measurements, writing CSV rows, AND running feature
-extraction + model inference. `behavior_dataset_generator.py` then
-duplicated the feature-extraction piece independently. In V2, those
-responsibilities are split into three single-purpose files
-(`radar_simulator.py` generates, `data_logger.py` buffers/persists,
-`feature_extraction.py` extracts), and every script -- training data
-generation, test data generation, and the live dashboard -- uses the
-exact same `DataLogger` class.
 
 Inputs
 ------

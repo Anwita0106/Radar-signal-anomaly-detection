@@ -1,22 +1,8 @@
 """
-feature_extraction.py
-=======================
+
 The single, canonical feature-engineering implementation for the whole
 project.
 
-Why this file exists
----------------------
-V1 implemented `compute_window_features` TWICE -- once in
-`radar_logger.py` and once, independently, in `behavior_dataset_generator.py`
--- with no import relationship between them. If one had ever been edited
-without the other, training and inference would have silently used
-different feature definitions.
-
-In V2, every script that needs behavioral features -- training data
-generation, test data generation, model training, evaluation, offline
-prediction, the live dashboard, and the threat engine -- imports
-`compute_window_features` and `FEATURE_COLUMNS` from THIS file and only
-this file.
 
 Inputs
 ------

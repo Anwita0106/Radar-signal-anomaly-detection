@@ -1,16 +1,8 @@
 """
-evaluate_model.py
-====================
-Testing pipeline, step 2 (evaluation):
+
 
     test_features.csv (labeled) -> Isolation Forest -> Accuracy / Precision /
                                                           Recall / F1 / Confusion Matrix
-
-This is the script V1's README *claimed* `train_model.py` did, but never
-actually implemented -- V1 had no labeled test set at all, so no
-precision/recall numbers were ever genuinely computed. In V2,
-`generate_test_data.py` produces real ground-truth labels, so this script
-can report real numbers.
 
 Run:
     python evaluate_model.py

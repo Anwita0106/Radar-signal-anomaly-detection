@@ -1,16 +1,4 @@
 """
-predict.py
-============
-Offline prediction CLI. Reads a raw radar track CSV (timestamp + every
-channel in `config.RADAR_CHANNELS`), slides a window across it, and for
-each full window: computes features (via `feature_extraction.py`, the one
-canonical implementation), scores it with the Isolation Forest, and runs
-the result through `threat_engine.py` to get an explainable 0-100 score.
-
-This replaces V1's `predict.py`, which used its own bolted-on
-`explain_window()` heuristic instead of the project's real threat engine,
-and `test_model.py`, which fed the model the wrong number of features and
-would crash on import.
 
 Run:
     python predict.py                          # uses data/test_tracks.csv

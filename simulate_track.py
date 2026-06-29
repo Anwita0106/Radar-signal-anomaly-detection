@@ -1,15 +1,4 @@
 """
-simulate_track.py
-====================
-One shared function that simulates a single aircraft pass through radar
-coverage and returns its raw measurement rows. Both
-`generate_training_data.py` (normal-only passes) and
-`generate_test_data.py` (normal passes with an anomalous segment injected)
-call this SAME function -- they only differ in which `behavior_schedule`
-they hand it. This is what guarantees training and testing are built on
-identical simulation mechanics, unlike V1, where the live dashboard's
-motion model and `dataset_generator.py`'s motion model were two separate
-(if similar) implementations.
 
 Inputs
 ------

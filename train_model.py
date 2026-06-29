@@ -1,21 +1,10 @@
 """
-train_model.py
-=================
+
 Training pipeline, step 2:
 
     training_features.csv -> Isolation Forest -> models/isolation_forest.pkl
                                                -> models/feature_baseline.json
 
-Trains a single `sklearn.ensemble.IsolationForest` (the ONLY anomaly
-detection model in this project -- V1 shipped three independent,
-incompatible models: `isolation_forest.pkl`, the unused
-`anomaly_detector.py`'s in-memory IsolationForest, and the broken
-5-feature assumptions in `test_model.py`).
-
-Also computes and saves the per-feature mean/std (the "baseline") and the
-training-set decision_function percentile range -- both consumed by
-`threat_engine.py` at inference time to turn a raw score into an
-explainable 0-100 threat score.
 
 Run:
     python train_model.py

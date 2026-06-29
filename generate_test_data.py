@@ -1,18 +1,9 @@
 """
-generate_test_data.py
-========================
+
 Testing pipeline, step 1:
 
     Aircraft -> Inject Anomaly -> Radar Data -> Feature Extraction -> test_features.csv
 
-Simulates aircraft passes that start with normal behavior and then,
-on roughly half of all passes, switch into ONE of the five
-`behaviors.ANOMALOUS_BEHAVIORS` for a limited segment before returning to
-normal flight. Every raw row is tagged with ground truth (anomalous
-behavior active or not), so the resulting windowed dataset has real
-labels -- unlike V1's `behavior_dataset.csv`, which had no labels at all
-and therefore could never be used to compute real accuracy/precision/
-recall/F1 numbers.
 
 Run:
     python generate_test_data.py

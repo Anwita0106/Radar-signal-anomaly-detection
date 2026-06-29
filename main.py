@@ -1,6 +1,4 @@
 """
-main.py
-=========
 Entry point for the live dashboard.
 
     Aircraft Simulator -> Radar Simulator -> Data Logger -> Feature Extraction

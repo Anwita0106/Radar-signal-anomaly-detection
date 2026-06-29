@@ -1,6 +1,5 @@
 """
-radar_simulator.py
-====================
+
 Models a single ground-based radar station and the five measurement
 channels it produces for a given aircraft state:
 
@@ -12,14 +11,6 @@ channels it produces for a given aircraft state:
                           proportional to relative velocity
     relative_velocity   - closing/opening rate (true range-rate), units/tick
 
-This replaces V1's `radar_simulator.py`, which used arbitrary
-`10000/(distance+1)` style formulas with no physical motivation and no
-velocity/Doppler concept at all. Here, `frequency` and `relative_velocity`
-are deliberately coupled the way a real Doppler radar's are -- an
-aircraft that suddenly accelerates or dives doesn't just change one
-random number, it produces a *physically consistent* shift across
-multiple channels, which is exactly the kind of signature the anomaly
-detector is meant to pick up on.
 
 Inputs
 ------

@@ -1,43 +1,8 @@
 """
-behaviors.py
-============
+
 The single, explicit catalog of every flight behavior the simulator can
 produce -- cleanly split into NORMAL and ANOMALOUS.
 
-Why this file exists
----------------------
-In V1, `aircraft_simulator.Aircraft` mixed normal and anomalous motion
-patterns together inside one unlabeled `mode` switch (0-5), with comments
-like "# DOA Drift Anomaly" sitting next to normal "Climbing"/"Descending"
-modes. There was no programmatic way to ask "is this behavior supposed to
-be normal or anomalous?" -- you had to read the source and guess.
-
-In V2, that question is answered by data, not by reading code:
-
-    NORMAL_BEHAVIORS = {"straight_flight": ..., "gentle_turn": ..., ...}
-    ANOMALOUS_BEHAVIORS = {"sudden_heading_change": ..., ...}
-
-The training pipeline only ever samples from NORMAL_BEHAVIORS. The testing
-pipeline samples a normal behavior, then injects one entry from
-ANOMALOUS_BEHAVIORS over a limited segment. The live dashboard does the
-same thing, using the exact same functions -- so "training," "testing,"
-and "the live demo" all agree, by construction, on what counts as normal
-and what counts as anomalous.
-
-Behavior function contract
----------------------------
-Every behavior function has the signature:
-
-    behavior(state: AircraftState, t: int, rng: np.random.Generator) -> None
-
-It mutates `state.heading`, `state.speed`, and/or `state.vspeed` in place
-for the current tick. `t` is the number of ticks since this behavior
-became active (starts at 0), which lets behaviors like ZIG_ZAG or
-SUDDEN_HEADING_CHANGE do something different at specific points in their
-lifetime. Actually moving the aircraft (applying heading/speed/vspeed to
-x/y/z) is the job of `aircraft_simulator.Aircraft.step()`, not of the
-behavior functions -- behaviors only decide *how the aircraft should be
-flying right now*, not how to integrate position.
 """
 
 from dataclasses import dataclass

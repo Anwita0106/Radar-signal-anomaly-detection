@@ -5,14 +5,6 @@ Training pipeline, step 1:
 
     Normal Aircraft -> Radar Data -> Feature Extraction -> training_features.csv
 
-Simulates many aircraft passes through radar coverage, where EVERY pass is
-built entirely out of `behaviors.NORMAL_BEHAVIORS` (straight_flight,
-gentle_turn, climb, descent) -- no anomalous behavior is ever scheduled
-here. This is what guarantees the Isolation Forest is trained on a
-genuinely normal-only distribution, rather than V1's `behavior_dataset.csv`,
-which was built from a live log that had anomalies randomly injected into
-it 3% of the time with no way to exclude them.
-
 Run:
     python generate_training_data.py
 

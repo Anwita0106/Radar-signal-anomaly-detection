@@ -1,39 +1,3 @@
-"""
-dashboard.py
-==============
-The live PyQt6 dashboard -- the final stage of the pipeline:
-
-    Aircraft Simulator -> Radar Simulator -> Data Logger -> Feature Extraction
-        -> Isolation Forest -> Threat Engine -> Dashboard (this file)
-
-Every tick (config.TICK_INTERVAL_MS): the aircraft advances one step, the
-reference radar takes a measurement, the measurement is buffered by
-`DataLogger`, and once a full window is available, `feature_extraction`,
-`isolation_forest_model`, and `threat_engine` are run in sequence (the
-exact same functions used offline by `predict.py`) to produce a threat
-score. The UI panels below are pure rendering of that result -- there is
-no parallel/duplicate scoring logic living inside this file.
-
-Why this file exists (vs. V1's `dashboard.py`)
-------------------------------------------------
-V1's dashboard hardcoded "RADAR STATUS: ONLINE" regardless of anything,
-never set `warning_message` in the anomaly branch (so the alert banner's
-text was always blank), and read decisions from `radar_logger.py`'s
-internal `(label, score)` tuple with no explanation of *why*. This V2
-dashboard surfaces the actual threat score, level, and the contributing
-factors list straight from `threat_engine.py`, keeps a real event log and
-alert history, and turns the aircraft red using the same `threat_level`
-the panels display -- one source of truth, not several.
-
-Run:
-    python dashboard.py     (or python main.py)
-
-Requires:
-    models/isolation_forest.pkl and models/feature_baseline.json to
-    already exist (run generate_training_data.py then train_model.py
-    first).
-"""
-
 import sys
 from collections import deque
 from datetime import datetime
