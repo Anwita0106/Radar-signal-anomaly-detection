@@ -1,6 +1,5 @@
 """
-threat_engine.py
-==================
+
 Turns three independent signals into ONE explainable threat assessment:
 
   1. The Isolation Forest's raw anomaly score (the ML component).
@@ -10,11 +9,6 @@ Turns three independent signals into ONE explainable threat assessment:
      relative_velocity) look, relative to the training baseline (the
      behavior component).
 
-These are combined into a single 0-100 `threat_score` and a four-level
-`threat_level` (LOW / MEDIUM / HIGH / CRITICAL), plus a short list of
-human-readable `contributing_factors` -- e.g. "frequency_max_jump is
-4.1 sigma from baseline" -- so the dashboard (and a presenter) can always
-explain *why* a given score was assigned, not just what the number is.
 
 
 Inputs
