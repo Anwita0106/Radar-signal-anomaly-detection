@@ -1,4 +1,4 @@
-# Radar Signal Anomaly Detection  for Threat Intelligence
+# Anomaly Detection  for Electronic Warfare System
 Radar systems generate large volumes of signal data that must be continuously monitored to identify unusual or suspicious behavior. This project presents a Radar Anomaly Detection System that simulates a multi-radar surveillance environment and applies machine learning to detect abnormal radar signal patterns in real time.
 
 The system tracks aircraft using multiple radar stations and generates live radar measurements including Direction of Arrival (DOA), Amplitude, Frequency, and Power. Realistic Gaussian measurement noise is incorporated to emulate real-world radar sensor uncertainty. These measurements are continuously analyzed to identify deviations from normal radar behavior.
