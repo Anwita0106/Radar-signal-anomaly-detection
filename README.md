@@ -7,8 +7,6 @@ An Isolation Forest based anomaly detection model is used to learn normal radar 
 
 This project demonstrates the application of machine learning, signal analysis, and real-time monitoring concepts in radar surveillance and electronic warfare inspired environments.
 
-```text
-
 ```
 
 ## Quick Start
