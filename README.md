@@ -9,7 +9,6 @@ To improve decision-making, the system incorporates a Threat Assessment Engine t
 
 ```
 
-
 ## Quick Start
 
 ```bash
@@ -29,9 +28,8 @@ python predict.py path/to/your_track.csv
 
 # 4. Launch the live dashboard
 python main.py
+
 ```
-
-
 ---
 
 ## Dashboard Preview
