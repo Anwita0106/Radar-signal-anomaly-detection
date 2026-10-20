@@ -30,7 +30,7 @@ python predict.py path/to/your_track.csv
 python main.py
 
 ```
----
+---      
 
 ## Dashboard Preview
 
