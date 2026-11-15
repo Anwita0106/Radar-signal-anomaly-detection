@@ -48,7 +48,7 @@ When anomalous flight behavior is detected, the threat engine combines Isolation
 
 ---
 
-## Architecture
+## Architecture     
 
 | Stage                 | File                                          | Responsibility                                                                                                                                |
 | --------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
